@@ -37,7 +37,7 @@ export default class Home extends React.Component {
     return (
       <View style={styles.container}>
         <Image
-          source={require("../../assets/airbnb-logo.png")}
+          source={require("../../../assets/airbnb-logo.png")}
           style={styles.logo}
         />
 

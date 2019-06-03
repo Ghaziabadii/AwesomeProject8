@@ -20,7 +20,7 @@ import Profile from "./components/screens/Profile/Profile";
 import Settings from "./components/screens/Settings/Settings";
 
 // CardScreen
-import CardScreen from "./components/components/CardScreen";
+import CardScreen from "./components/Components/CardScreen";
 
 const FeedStack = createStackNavigator({
   Feed: {
