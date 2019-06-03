@@ -9,15 +9,15 @@ import {
 import { Platform } from "react-native";
 import { Icon } from "native-base";
 
-import Home from "./components/screens/Home";
+import Home from "./components/screens/Home/Home";
 
 // we will use these screens later in our AppNavigator
-import AddItem from "./components/screens/AddItem";
+import AddItem from "./components/screens/AddItem/AddItem";
 
 // we will use these screens later in our DashboardTabNavigator
-import Feed from "./components/screens/Feed";
-import Profile from "./components/screens/Profile";
-import Settings from "./components/screens/Settings";
+import Feed from "./components/screens/Feed/Feed";
+import Profile from "./components/screens/Profile/Profile";
+import Settings from "./components/screens/Settings/Settings";
 
 // CardScreen
 import CardScreen from "./components/components/CardScreen";
@@ -98,8 +98,7 @@ const DashboardTabNavigator = createBottomTabNavigator(
   {
     FeedStack,
     ProfileStack,
-    SettingsStack,
-    Feed
+    SettingsStack
   },
   {
     animationEnabled: true,
@@ -167,7 +166,7 @@ const AppSwitchNavigator = createSwitchNavigator(
     AppDrawerNavigator
   },
   {
-    initialRouteName: "AppDrawerNavigator"
+    initialRouteName: "Home"
   }
 );
 

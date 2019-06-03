@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from "./node_modules/react";
 import { View, Text, Image, StyleSheet } from "react-native";
 
 export default class CardScreen extends Component {
