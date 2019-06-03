@@ -9,18 +9,18 @@ import {
 import { Platform } from "react-native";
 import { Icon } from "native-base";
 
-import Home from "./components/screens/Home/Home";
+import Home from "./src/Screens/Home/Home";
 
 // we will use these screens later in our AppNavigator
-import AddItem from "./components/screens/AddItem/AddItem";
+import AddItem from "./src/Screens/AddItem/AddItem";
 
 // we will use these screens later in our DashboardTabNavigator
-import Feed from "./components/screens/Feed/Feed";
-import Profile from "./components/screens/Profile/Profile";
-import Settings from "./components/screens/Settings/Settings";
+import Feed from "./src/Screens/Feed/Feed";
+import Profile from "./src/Screens/Profile/Profile";
+import Settings from "./src/Screens/Settings/Settings";
 
 // CardScreen
-import CardScreen from "./components/Components/CardScreen";
+import CardScreen from "./src/Components/CardScreen";
 
 const FeedStack = createStackNavigator({
   Feed: {
