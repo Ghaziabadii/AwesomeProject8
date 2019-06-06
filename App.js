@@ -21,6 +21,61 @@ import Settings from "./src/Screens/Settings/Settings";
 
 // CardScreen
 import CardScreen from "./src/Components/CardScreen";
+import Cart from "./src/Screens/Cart/Cart";
+import MyOrders from "./src/Screens/MyOrders/MyOrders";
+import OrderDetails from "./src/Screens/OrderDetails/OrderDetails";
+
+const OrderDetailsStack = createStackNavigator({
+  OrderDetails: {
+    screen: OrderDetails,
+
+    navigationOptions: ({ navigation }) => {
+      return {
+        headerTitle: "OrderDetails",
+
+        headerLeft: (
+          <Icon
+            style={{ paddingLeft: 10 }}
+            onPress={() => navigation.openDrawer()}
+            name="md-menu"
+            size={30}
+          />
+        )
+      };
+    }
+  }
+});
+
+const MyOrdersStack = createStackNavigator({
+  MyOrders: {
+    screen: MyOrders,
+
+    navigationOptions: ({ navigation }) => {
+      return {
+        headerTitle: "MyOrders",
+
+        headerLeft: (
+          <Icon
+            style={{ paddingLeft: 10 }}
+            onPress={() => navigation.openDrawer()}
+            name="md-menu"
+            size={30}
+          />
+        )
+      };
+    }
+  }
+});
+
+const CartNavigator = createStackNavigator(
+  {
+    Cart,
+    CardScreen
+  },
+  {
+    initialRouteName: "CardScreen"
+  }
+);
 
 const FeedStack = createStackNavigator({
   Feed: {
@@ -50,7 +105,7 @@ const FeedStack = createStackNavigator({
     }
   },
   CardScreen: {
-    screen: CardScreen
+    screen: CartNavigator
   }
 });
 
@@ -98,7 +153,9 @@ const DashboardTabNavigator = createBottomTabNavigator(
   {
     FeedStack,
     ProfileStack,
-    SettingsStack
+    SettingsStack,
+    MyOrdersStack,
+    OrderDetailsStack
   },
   {
     animationEnabled: true,
@@ -152,7 +209,9 @@ const AppDrawerNavigator = createDrawerNavigator(
     Dashboard: { screen: DashboardStackNavigator },
     FeedStack,
     ProfileStack,
-    SettingsStack
+    SettingsStack,
+    MyOrdersStack,
+    OrderDetailsStack
   },
   {
     initialRouteName: "Dashboard"
@@ -163,10 +222,11 @@ const AppSwitchNavigator = createSwitchNavigator(
   {
     Home,
     AddItem,
-    AppDrawerNavigator
+    AppDrawerNavigator,
+    MyOrdersStack
   },
   {
-    initialRouteName: "Home"
+    initialRouteName: "AppDrawerNavigator"
   }
 );
 
